@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="Dec13">
+    <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="jan9">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Capturev2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audio_Capturev2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +47,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.Audio_Capture.executor": "Run",
+    "Python.Audio_Capturev2.executor": "Run",
     "Python.CCTV_Main_App.executor": "Run",
     "Python.CCTV_Main_AppV2.executor": "Run",
     "Python.CCTV_Main_AppV2_1.executor": "Run",
@@ -98,13 +100,30 @@
       <option name="project" value="LOCAL" />
       <updated>1734095684110</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="jan9">
+      <option name="closed" value="true" />
+      <created>1736393916399</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736393916399</updated>
+    </task>
+    <task id="LOCAL-00004" summary="jan9">
+      <option name="closed" value="true" />
+      <created>1736394224844</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736394224844</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Nov20" />
     <MESSAGE value="Dec13" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dec13" />
+    <MESSAGE value="jan9" />
+    <option name="LAST_COMMIT_MESSAGE" value="jan9" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

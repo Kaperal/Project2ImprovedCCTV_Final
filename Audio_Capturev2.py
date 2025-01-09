@@ -103,3 +103,6 @@ root = Tk()
 app = AudioRecorderApp(root)
 root.protocol("WM_DELETE_WINDOW", app.on_closing)
 root.mainloop()
+
+
+#FAYGWUIODJKABUW*FDHAHBJEJFO
