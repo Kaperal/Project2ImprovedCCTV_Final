@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="jan9.1">
-      <change afterPath="$PROJECT_DIR$/Gun_Capture.py" afterDir="false" />
+    <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="jan9.2">
+      <change afterPath="$PROJECT_DIR$/Model/best.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gun_and_human_detectionV2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCTV_Main_AppV4.py" beforeDir="false" afterPath="$PROJECT_DIR$/CCTV_Main_AppV4.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,11 +63,12 @@
     "Python.gun_and_human_detectionV2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/AlwinPalma/PycharmProjects/pythonProject2ImprovedCCTV_Final"
+    "last_opened_file_path": "C:/Users/AlwinPalma/PycharmProjects/pythonProject2ImprovedCCTV_Final/Model"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AlwinPalma\PycharmProjects\pythonProject2ImprovedCCTV_Final\Model" />
       <recent name="C:\Users\AlwinPalma\PycharmProjects\pythonProject2ImprovedCCTV_Final" />
     </key>
   </component>
@@ -125,7 +128,31 @@
       <option name="project" value="LOCAL" />
       <updated>1736394339143</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="jan9.2">
+      <option name="closed" value="true" />
+      <created>1736401020396</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736401020396</updated>
+    </task>
+    <task id="LOCAL-00007" summary="jan9.2">
+      <option name="closed" value="true" />
+      <created>1736401036491</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736401036491</updated>
+    </task>
+    <task id="LOCAL-00008" summary="jan9.2">
+      <option name="closed" value="true" />
+      <created>1736401090070</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1736401090070</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -133,7 +160,8 @@
     <MESSAGE value="Dec13" />
     <MESSAGE value="jan9" />
     <MESSAGE value="jan9.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="jan9.1" />
+    <MESSAGE value="jan9.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="jan9.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -141,6 +169,10 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/CCTV_Main_AppV3.py</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/CCTV_Main_AppV4.py</url>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -3,7 +3,7 @@ import serial.tools.list_ports
 import tkinter as tk
 from tkinter import ttk, messagebox
 from PIL import Image, ImageTk
-from gun_and_human_detection import detect_objects
+from gun_and_human_detectionV2 import detect_objects
 from face_recognition_module import recognize_faces
 import threading
 from audio_detect import AudioDetection  # Import the audio detection module
@@ -238,17 +238,15 @@ class CCTVApp:
                     if self.serial_connection:
                         self.serial_connection.write(b'ALERT: Gun detected!\n')
 
-                # Check if a human is detected
-                elif label == 'person':
-                    print("Human detected, starting face recognition...")
-                    faces, annotated_frame = recognize_faces(frame)
 
-                    for face in faces:
-                        if face['name'] != "Unknown":
-                            print(f"Recognized: {face['name']}")
-                        else:
-                            print("Unknown face detected.")
-                        label_face.append(face['name'])
+                faces, annotated_frame = recognize_faces(frame)
+
+                for face in faces:
+                    if face['name'] != "Unknown":
+                        print(f"Recognized: {face['name']}")
+                    else:
+                        print("Unknown face detected.")
+                    label_face.append(face['name'])
                     #break  # lol so the break breaks out of the detection for loop hence not recording the label to the excel
                 # Log the object details to CSV
                 with open(self.csv_file_path, 'a', newline='') as csvfile:
