@@ -6,7 +6,7 @@ from PIL import Image, ImageTk
 from gun_and_human_detectionV2 import detect_objects
 from face_recognition_module import recognize_faces
 import threading
-from audio_detect import AudioDetection  # Import the audio detection module
+from audio_detectV2 import AudioDetection  # Import the audio detection module
 import sounddevice as sd
 
 import csv
@@ -90,15 +90,24 @@ class CCTVApp:
         self.alert_flag = False  # Shared state for detection
 
     def initialize_audio_model(self):
-        """Load and train the audio detection model."""
+        """Load an existing trained audio model without retraining."""
         try:
-            print("Loading and training the audio detection model...")
-            X, y = self.audio_detection.load_data()  # Load data
-            self.audio_detection.train_model(X, y)  # Train the model
-            print("Audio detection model is ready.")
+            model_path = "trained_model.pkl"  # Path to the pre-trained model
+            if os.path.exists(model_path):
+                print(f"Loading trained audio model from {model_path}...")
+                self.audio_detection = AudioDetection(model_path=model_path)  # Load model
+                print("Audio detection model loaded successfully.")
+            else:
+                try:
+                    print("Loading and training the audio detection model...")
+                    X, y = self.audio_detection.load_data()  # Load dataset
+                    self.audio_detection.train_model(X, y)  # Train the model
+                    print("Audio detection model is ready.")
+                except Exception as e:
+                    messagebox.showerror("Error", f"Failed to initialize audio detection: {e}")
+                messagebox.showerror("Error", "Trained audio model not found!")
         except Exception as e:
-            messagebox.showerror("Error", f"Failed to initialize audio detection: {e}")
-
+            messagebox.showerror("Error", f"Failed to load audio detection model: {e}")
     def run_audio_detection_thread(self, microphone_id):
         """Run audio detection in a separate thread."""
 
@@ -277,9 +286,9 @@ class CCTVApp:
                     ])
 
             # Step 3: Combined Logic
-            if gun_detected==True and self.audio_detection.alert_flag:
-                print("ALERT: Gun detected in video AND scream or gunshot detected in audio!")
-                # Optionally, add further actions like saving to a log, sending an email, etc.
+                if gun_detected==True and self.audio_detection.alert_flag:
+                    print("ALERT: Gun detected in video AND scream or gunshot detected in audio!")
+                    # Optionally, add further actions like saving to a log, sending an email, etc.
 
             # Resize the frame to the desired display size
             frame = cv2.resize(frame, (d_width, d_height))
