@@ -88,6 +88,30 @@ class CCTVApp:
         self.prepare_results_folder()
 
         self.alert_flag = False  # Shared state for detection
+        self.gun_detected = False
+
+        # Add frame for simulation buttons
+        self.simulation_frame = tk.Frame(root)
+        self.simulation_frame.grid(row=3, column=0, padx=10, pady=10, sticky="nw")
+
+        # Simulate Gun button
+        self.simulate_gun_button = tk.Button(self.simulation_frame, text="Simulate Gun", command=self.simulate_gun)
+        self.simulate_gun_button.pack(pady=5)
+
+        # Simulate Scream button
+        self.simulate_scream_button = tk.Button(self.simulation_frame, text="Simulate Scream",
+                                                command=self.simulate_scream)
+        self.simulate_scream_button.pack(pady=5)
+
+    def simulate_gun(self):
+        """Simulate a gun detection."""
+        self.gun_detected = True
+        print("Simulated Gun Detection: gun_detected set to True.")
+
+    def simulate_scream(self):
+        """Simulate a scream detection."""
+        self.alert_flag = True
+        print("Simulated Scream Detection: alert_flag set to True.")
 
     def initialize_audio_model(self):
         """Load an existing trained audio model without retraining."""
@@ -235,14 +259,12 @@ class CCTVApp:
                 y1 = detection['bbox'][1]
                 label_face = []
 
-                # Initialize flag for gun detection
-                gun_detected = False
-
-
-
+                local_gun_detected=False
+                if self.gun_detected:
+                    gun_detected_local = True
                 # Check if a gun is detected
                 if label == 'gun' and confidence > 0.5:
-                    gun_detected = True
+                    self.gun_detected = True
                     print("Gun detected! Triggering alert...")
                     if self.serial_connection:
                         self.serial_connection.write(b'ALERT: Gun detected!\n')
@@ -286,9 +308,13 @@ class CCTVApp:
                     ])
 
             # Step 3: Combined Logic
-                if gun_detected==True and self.audio_detection.alert_flag:
-                    print("ALERT: Gun detected in video AND scream or gunshot detected in audio!")
-                    # Optionally, add further actions like saving to a log, sending an email, etc.
+            if self.gun_detected == True and self.alert_flag == True:
+                print("ALERT: Gun detected in video AND scream or gunshot detected in audio!")
+                self.gun_detected = False
+                self.alert_flag = False
+                messagebox.showwarning("It activated")
+
+                # Optionally, add further actions like saving to a log, sending an email, etc.
 
             # Resize the frame to the desired display size
             frame = cv2.resize(frame, (d_width, d_height))
@@ -307,6 +333,8 @@ class CCTVApp:
             imgtk = ImageTk.PhotoImage(image=img)
             self.video_label.imgtk = imgtk
             self.video_label.configure(image=imgtk)
+            self.root.update_idletasks()
+            self.root.update()
 
         if self.cap:
             self.cap.release()
