@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="Jan29">
+      <change afterPath="$PROJECT_DIR$/CCTV_Main_AppV5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Project2ImprovedCCTV_Final.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project2ImprovedCCTV_Final.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CCTV_Main_AppV4.py" beforeDir="false" afterPath="$PROJECT_DIR$/CCTV_Main_AppV4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio_detectV2.py" beforeDir="false" afterPath="$PROJECT_DIR$/audio_detectV2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face_recognition_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_recognition_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,12 +67,15 @@
     "Python.gun_and_human_detection.executor": "Run",
     "Python.gun_and_human_detectionV2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/AlwinPalma/PycharmProjects/pythonProject2ImprovedCCTV_Final"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/AlwinPalma/PycharmProjects/Project2ImprovedCCTV_Final"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\AlwinPalma\PycharmProjects\Project2ImprovedCCTV_Final" />
       <recent name="C:\Users\AlwinPalma\PycharmProjects\pythonProject2ImprovedCCTV_Final" />
       <recent name="C:\Users\AlwinPalma\PycharmProjects\pythonProject2ImprovedCCTV_Final\Model" />
     </key>
@@ -107,7 +115,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-0e3be3396995-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23339.19" />
+        <option value="bundled-python-sdk-fc1d50d2d915-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.24978.54" />
       </set>
     </attachedChunks>
   </component>
@@ -218,6 +226,10 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/CCTV_Main_AppV3.py</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/face_recognition_module.py</url>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

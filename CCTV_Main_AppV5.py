@@ -250,71 +250,67 @@ class CCTVApp:
 
             # Step 1: Object detection (guns, humans)
             detections, frame = detect_objects(frame)
+            #Step 2: Face Recognition
             faces, frame = recognize_faces(frame)
             # Step 2: Check for guns or humans by iterating through detected objects
             for detection in detections:
                 label = detection['label']
                 confidence = detection['confidence']
-                x1=detection['bbox'][0]
-                y1 = detection['bbox'][1]
-                label_face = []
+                x1, y1, x2, y2 = detection['bbox']  # Unpack bounding box coordinates
 
                 local_gun_detected=False
                 if self.gun_detected:
                     gun_detected_local = True
                 # Check if a gun is detected
-                if label == 'gun' and confidence > 0.5:
+                if label == 'gun' and confidence > 0.5: #Name to be replaced
                     self.gun_detected = True
                     print("Gun detected! Triggering alert...")
                     if self.serial_connection:
                         self.serial_connection.write(b'ALERT: Gun detected!\n')
 
+                # Draw bounding boxes for detected objects (e.g., gun, human)
+                cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                cv2.putText(frame, f"{label}: {confidence:.2f}", (x1, y1 - 10),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
                 #faces, annotated_frame = recognize_faces(frame)
 
-                for face in faces:
-                    if face['name'] != "Unknown":
-                        print(f"Recognized: {face['name']}")
-                    else:
-                        print("Unknown face detected.")
-                    label_face.append(face['name'])
+            for face in faces:
+                name = face['name']
+                if face['name'] != "Unknown":
+                    print(f"Recognized: {face['name']}")
+                else:
+                    print("Unknown face detected.")
+
                     #break  # lol so the break breaks out of the detection for loop hence not recording the label to the excel
-                # Log the object details to CSV
-                with open(self.csv_file_path, 'a', newline='') as csvfile:
-                    csv_writer = csv.writer(csvfile)
-                    if self.header == 0:
-                        csv_writer.writerow(
-                            ["Label", "X coordinate", "Y coordinate", "Confidence", "Time","Faces", "Frame Count"])
-                        self.header = 1
-
-                    # Scrollable list display
-                    current_time = datetime.datetime.now().strftime("%H:%M:%S")
-                    current_date = datetime.datetime.now().strftime("%Y-%m-%d")
-                    data_type = label
-                    accuracy = confidence
-                    #test_data = f"Time: {current_time}, Date: {current_date}, Type: {data_type}, Accuracy: {accuracy}"
-
-                    # Create a label for the new data and add it to the scrollable frame
-                    #data_label = Label(self.scrollable_frame, text=test_data, anchor="w", justify="left")
-                    #data_label.pack(fill="x", padx=10, pady=2)
-                    csv_writer.writerow([
-                        label,
-                        x1,
-                        y1,
-                        confidence,
-                        current_time,
-                        ', '.join(label_face),  # Convert list to a string
-                        self.frame_count
-                    ])
-
-            # Step 3: Combined Logic
+            # Step : Combined Logic
             if self.gun_detected == True and self.alert_flag == True:
                 print("ALERT: Gun detected in video AND scream or gunshot detected in audio!")
                 self.gun_detected = False
                 self.alert_flag = False
                 messagebox.showwarning("It activated")
 
-                # Optionally, add further actions like saving to a log, sending an email, etc.
+                        # Optionally, add further actions like saving to a log, sending an email, etc.
+            # Log the object details to CSV
+            # Step 6: Log the detection details to CSV
+            # Log the object and face details to CSV
+            current_time = datetime.datetime.now().strftime("%H:%M:%S")
+            current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+            label_face = [face['name'] for face in faces]
+            with open(self.csv_file_path, 'a', newline='') as csvfile:
+                csv_writer = csv.writer(csvfile)
+                if self.header == 0:
+                    csv_writer.writerow(
+                        ["Label", "X coordinate", "Y coordinate", "Confidence", "Time","Faces", "Frame Count"])
+                    self.header = 1
+
+                # Log the object detections
+                for detection in detections:
+                    label = detection['label']
+                    x1, y1, x2, y2 = detection['bbox']
+                    confidence = detection['confidence']
+                    csv_writer.writerow(
+                        [label, x1, y1, x2, y2, confidence, current_time, ', '.join(label_face), self.frame_count])
 
             # Resize the frame to the desired display size
             frame = cv2.resize(frame, (d_width, d_height))

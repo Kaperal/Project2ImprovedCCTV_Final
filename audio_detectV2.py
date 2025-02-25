@@ -42,12 +42,12 @@ class AudioDetection:
         """Load training data from subfolders within the base folder."""
 
         scream_features, scream_labels = self.load_files_from_directory(base_folder + 'scream', 'scream')
-        gunshot_features, gunshot_labels = self.load_files_from_directory(base_folder + 'gunshot', 'gunshot')
+        #gunshot_features, gunshot_labels = self.load_files_from_directory(base_folder + 'gunshot', 'gunshot')
         background_features, background_labels = self.load_files_from_directory(base_folder + 'background', 'background')
 
         # Combine the features and labels
-        X = scream_features + gunshot_features + background_features
-        y = scream_labels + gunshot_labels + background_labels
+        X = scream_features +  background_features
+        y = scream_labels +  background_labels
 
         # Convert to numpy arrays
         X = np.array(X)

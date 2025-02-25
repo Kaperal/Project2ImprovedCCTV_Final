@@ -107,7 +107,7 @@ def recognize_faces(frame):
 
 if __name__ == "__main__":
     # For testing, capture video from your webcam
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
 
     while cap.isOpened():
         ret, frame = cap.read()
