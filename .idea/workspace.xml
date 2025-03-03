@@ -4,10 +4,63 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="Feb 25">
-      <change afterPath="$PROJECT_DIR$/audio_detectV3.py" afterDir="false" />
+    <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="March 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trained_model.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/2CVI_15_11_0_15_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/2G2F_15_13_0_27_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/2G2F_15_9_0_27_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/3AES_15_8_0_15_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/3R4N_15_4_0_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/5QDM_15_12_0_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/5QDM_15_5_0_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/77AY_15_7_0_30_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/7IOA_15_11_1_33_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/8QBK_15_15_1_55_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/A8AF_15_3_0_20_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/AR80_15_13_0_18_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/AR80_15_14_0_18_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/GZAE_15_6_0_28_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/GZAE_15_9_0_28_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/H68F_15_7_0_24_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/H68F_15_8_0_24_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/I850_15_7_1_35_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/IFJ0_15_10_0_30_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/IPBF_15_7_0_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/IPBF_15_8_0_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/KW7F_15_7_0_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/KW7F_15_8_0_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/MEK8_15_1_0_33_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/MEK8_15_6_0_33_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/ONWC_15_5_0_15_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/OZDT_15_12_0_31_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/OZDT_15_15_0_31_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/PPH8_15_15_0_25_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/PPH8_15_6_0_25_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/PPH8_15_9_0_25_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/PZ73_15_2_1_33_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/QLQX_15_15_0_19_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/QZXV_15_10_1_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/QZXV_15_2_1_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/RDB6_15_2_1_30_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/SDIP_15_10_0_22_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/SDIP_15_1_0_22_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/SDIP_15_6_0_22_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/UDVO_15_1_0_25_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/UDVO_15_6_0_25_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/ULJI_15_5_0_12_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/W268_15_11_0_24_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/W268_15_2_0_24_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/WVST_15_13_0_15_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/WVST_15_14_0_15_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/WVST_15_1_0_15_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/WVST_15_9_0_15_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/X2OC_15_3_0_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/ZQYD_15_7_0_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/ZQYD_15_8_0_23_0_0_0.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/scream1.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/scream2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio_Files_data/scream/scream3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio_detectV3.py" beforeDir="false" afterPath="$PROJECT_DIR$/audio_detectV3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,31 +98,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Audio_Capture.executor": "Run",
-    "Python.Audio_Capturev2.executor": "Run",
-    "Python.CCTV_Main_App.executor": "Run",
-    "Python.CCTV_Main_AppV2.executor": "Run",
-    "Python.CCTV_Main_AppV2_1.executor": "Run",
-    "Python.CCTV_Main_AppV3.executor": "Run",
-    "Python.CCTV_Main_AppV4.executor": "Run",
-    "Python.CCTV_Main_AppV5.executor": "Run",
-    "Python.Face_Recognition_Capture.executor": "Run",
-    "Python.Gun_Capture.executor": "Run",
-    "Python.audio_detect.executor": "Run",
-    "Python.audio_detectV2.executor": "Run",
-    "Python.audio_detectV3.executor": "Run",
-    "Python.face_recognition_module.executor": "Run",
-    "Python.gun_and_human_detection.executor": "Run",
-    "Python.gun_and_human_detectionV2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/AlwinPalma/PycharmProjects/Project2ImprovedCCTV_Final"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Audio_Capture.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Audio_Capturev2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CCTV_Main_App.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CCTV_Main_AppV2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CCTV_Main_AppV2_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CCTV_Main_AppV3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CCTV_Main_AppV4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CCTV_Main_AppV5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Face_Recognition_Capture.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Gun_Capture.executor&quot;: &quot;Run&quot;,
+    &quot;Python.audio_detect.executor&quot;: &quot;Run&quot;,
+    &quot;Python.audio_detectV2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.audio_detectV3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.face_recognition_module.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gun_and_human_detection.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gun_and_human_detectionV2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/AlwinPalma/PycharmProjects/Project2ImprovedCCTV_Final&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\AlwinPalma\PycharmProjects\Project2ImprovedCCTV_Final" />
@@ -205,7 +258,23 @@
       <option name="project" value="LOCAL" />
       <updated>1738128345140</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="March 3">
+      <option name="closed" value="true" />
+      <created>1740987406870</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1740987406870</updated>
+    </task>
+    <task id="LOCAL-00012" summary="March 3">
+      <option name="closed" value="true" />
+      <created>1740987466882</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1740987466882</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -215,7 +284,8 @@
     <MESSAGE value="jan9.1" />
     <MESSAGE value="jan9.2" />
     <MESSAGE value="Jan29" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jan29" />
+    <MESSAGE value="March 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="March 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
