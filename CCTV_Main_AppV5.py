@@ -6,7 +6,7 @@ from PIL import Image, ImageTk
 from gun_and_human_detectionV2 import detect_objects
 from face_recognition_module import recognize_faces
 import threading
-from audio_detectV2 import AudioDetection  # Import the audio detection module
+from audio_detectV3 import AudioDetection  # Import the audio detection module
 import sounddevice as sd
 
 import csv
