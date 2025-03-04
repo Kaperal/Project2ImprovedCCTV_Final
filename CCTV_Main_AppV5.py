@@ -103,6 +103,45 @@ class CCTVApp:
                                                 command=self.simulate_scream)
         self.simulate_scream_button.pack(pady=5)
 
+
+    def show_scream_alert(self):
+        # If the alert label already exists, remove it before creating a new one
+        if hasattr(self, "scream_label") and self.scream_label:
+            self.scream_label.destroy()
+
+        # Create the overlay label
+        self.scream_label = tk.Label(self.root, text="SCREAM DETECTED!", fg="white", bg="red",
+                                     font=("Arial", 24, "bold"))
+
+        # Place it at the center and in front of everything
+        self.scream_label.place(relx=0.95, rely=0.20, anchor="e")
+
+        # Bring it to the front
+        self.scream_label.lift()
+
+    def show_gun_alert(self):
+        # If the alert label already exists, remove it before creating a new one
+        if hasattr(self, "gun_label") and self.gun_label:
+            self.gun_label.destroy()
+
+        # Create the overlay label
+        self.gun_label = tk.Label(self.root, text="WEAPON DETECTED!", fg="white", bg="red",
+                                     font=("Arial", 24, "bold"))
+
+        # Place it at the center and in front of everything
+        self.gun_label.place(relx=0.95, rely=0.30, anchor="e")
+
+        # Bring it to the front
+        self.gun_label.lift()
+
+    def hide_scream_alert(self):
+        if hasattr(self, "scream_label") and self.scream_label:
+            self.scream_label.destroy()
+            self.scream_label = None
+    def hide_gun_alert(self):
+        if hasattr(self, "gun_label") and self.gun_label:
+            self.gun_label.destroy()
+            self.gun_label = None
     def simulate_gun(self):
         """Simulate a gun detection."""
         self.gun_detected = True
@@ -116,7 +155,7 @@ class CCTVApp:
     def initialize_audio_model(self):
         """Load an existing trained audio model without retraining."""
         try:
-            model_path = "trained_model.pkl"  # Path to the pre-trained model
+            model_path = "trained_model2.pkl"  # Path to the pre-trained model
             if os.path.exists(model_path):
                 print(f"Loading trained audio model from {model_path}...")
                 self.audio_detection = AudioDetection(model_path=model_path)  # Load model
@@ -140,12 +179,12 @@ class CCTVApp:
                 print(f"Audio callback status: {status}")
             try:
                 # Process audio data in the callback
-                detected_event = self.audio_detection.detect_event(indata)  # Replace with your detection logic
-                if detected_event in ['gun', 'scream']:
+                detected_event = self.audio_detection.detect_event()  # Replace with your detection logic
+                if detected_event == "scream":
                     self.alert_flag = True
                     print("Audio event detected: ", detected_event)
-                else:
-                    self.alert_flag = False
+                #else:
+                    #self.alert_flag = False
             except Exception as e:
                 print(f"Error in audio callback: {e}")
 
@@ -244,6 +283,20 @@ class CCTVApp:
     def run_cctv(self):
         """Run the CCTV surveillance loop."""
         while self.cap.isOpened():
+            try:
+                # Process audio data in the callback
+                detected_event = self.audio_detection.detect_event()  # Replace with your detection logic
+                if detected_event == "scream":
+                    self.alert_flag = True
+                    self.show_scream_alert()  # Show label
+                    print("Audio event detected: ", detected_event)
+
+
+            except Exception as e:
+                print(f"Error in audio callback: {e}")
+
+
+
             ret, frame = self.cap.read()
             if not ret:
                 break
@@ -253,20 +306,24 @@ class CCTVApp:
             #Step 2: Face Recognition
             faces, frame = recognize_faces(frame)
             # Step 2: Check for guns or humans by iterating through detected objects
+
             for detection in detections:
                 label = detection['label']
                 confidence = detection['confidence']
                 x1, y1, x2, y2 = detection['bbox']  # Unpack bounding box coordinates
 
-                local_gun_detected=False
-                if self.gun_detected:
-                    gun_detected_local = True
+
+
                 # Check if a gun is detected
-                if label == 'gun' and confidence > 0.5: #Name to be replaced
+                if label and confidence>.5: #Name to be replaced
                     self.gun_detected = True
+                    self.show_gun_alert()
+
                     print("Gun detected! Triggering alert...")
+
                     if self.serial_connection:
                         self.serial_connection.write(b'ALERT: Gun detected!\n')
+
 
                 # Draw bounding boxes for detected objects (e.g., gun, human)
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
@@ -282,14 +339,6 @@ class CCTVApp:
                 else:
                     print("Unknown face detected.")
 
-                    #break  # lol so the break breaks out of the detection for loop hence not recording the label to the excel
-            # Step : Combined Logic
-            if self.gun_detected == True and self.alert_flag == True:
-                print("ALERT: Gun detected in video AND scream or gunshot detected in audio!")
-                self.gun_detected = False
-                self.alert_flag = False
-                messagebox.showwarning("It activated")
-
                         # Optionally, add further actions like saving to a log, sending an email, etc.
             # Log the object details to CSV
             # Step 6: Log the detection details to CSV
@@ -301,7 +350,7 @@ class CCTVApp:
                 csv_writer = csv.writer(csvfile)
                 if self.header == 0:
                     csv_writer.writerow(
-                        ["Label", "X coordinate", "Y coordinate", "Confidence", "Time","Faces", "Frame Count"])
+                        ["Label", "X coordinate", "Y coordinate", "Confidence", "Time","Faces", "Frame Count","Scream Detected"])
                     self.header = 1
 
                 # Log the object detections
@@ -310,8 +359,17 @@ class CCTVApp:
                     x1, y1, x2, y2 = detection['bbox']
                     confidence = detection['confidence']
                     csv_writer.writerow(
-                        [label, x1, y1, x2, y2, confidence, current_time, ', '.join(label_face), self.frame_count])
-
+                        [label, x1, y1, confidence, current_time, ', '.join(label_face), self.frame_count,self.alert_flag,self.gun_detected])
+                if not detections:
+                    csv_writer.writerow(["", "", "", "", current_time, ', '.join(label_face), self.frame_count,self.alert_flag,self.gun_detected])
+            # Step : Combined Logic
+            if self.gun_detected == True and self.alert_flag == True:
+                print("ALERT: Gun detected in video AND scream or gunshot detected in audio!")
+                self.gun_detected = False
+                self.alert_flag = False
+                self.hide_scream_alert()
+                self.hide_gun_alert()
+                messagebox.showwarning("It activated")
             # Resize the frame to the desired display size
             frame = cv2.resize(frame, (d_width, d_height))
 

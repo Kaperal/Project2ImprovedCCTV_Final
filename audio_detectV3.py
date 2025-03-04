@@ -15,6 +15,7 @@ class AudioDetection:
     def __init__(self, model_path=None):
         """Initialize AudioDetection object."""
         self.model_path = model_path
+        self.predicted=""
         if model_path and os.path.exists(model_path):
             self.model = joblib.load(model_path)
             print(f"Model loaded from {model_path}")
@@ -88,6 +89,7 @@ class AudioDetection:
                 mfcc = librosa.feature.mfcc(y=audio, sr=sr, n_mfcc=13)
                 mfcc_mean = np.mean(mfcc.T, axis=0).reshape(1, -1)
                 prediction = self.model.predict(mfcc_mean)
+                self.predicted = self.model.predict(mfcc_mean)
                 print(f"Detected Sound: {prediction[0]}")
 
                 # Add a small delay to prevent overloading the CPU
@@ -101,6 +103,9 @@ class AudioDetection:
         audio_thread = threading.Thread(target=self.start_audio_detection, args=(microphone_id,), daemon=True)
         audio_thread.start()
         return audio_thread
+    def detect_event(self):
+        output = self.predicted[0]
+        return output
 
 
 class AudioDetectionGUI:
