@@ -102,6 +102,10 @@ class CCTVApp:
         self.simulate_scream_button = tk.Button(self.simulation_frame, text="Simulate Scream",
                                                 command=self.simulate_scream)
         self.simulate_scream_button.pack(pady=5)
+        # Reset Scream and Gun
+        self.reset_button = tk.Button(self.simulation_frame, text="Reset Scream and Gun",
+                                                command=self.reset_button)
+        self.reset_button.pack(pady=5)
 
 
     def show_scream_alert(self):
@@ -151,6 +155,13 @@ class CCTVApp:
         """Simulate a scream detection."""
         self.alert_flag = True
         print("Simulated Scream Detection: alert_flag set to True.")
+    def reset_button(self):
+        """Simulate a gun detection."""
+        self.gun_detected = False
+        self.alert_flag = False
+        self.hide_scream_alert()
+        self.hide_gun_alert()
+
 
     def initialize_audio_model(self):
         """Load an existing trained audio model without retraining."""
@@ -315,7 +326,7 @@ class CCTVApp:
 
 
                 # Check if a gun is detected
-                if label and confidence>.5: #Name to be replaced
+                if label and confidence > 0.5: #Name to be replaced
                     self.gun_detected = True
                     self.show_gun_alert()
 
