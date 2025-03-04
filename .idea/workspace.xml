@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="March 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Audio_Files_data/background/background1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Audio_Files_data/background/background2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Audio_Files_data/background/background3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Audio_Files_data/background/recorded_audio_11-36-27.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CCTV_Main_AppV5.py" beforeDir="false" afterPath="$PROJECT_DIR$/CCTV_Main_AppV5.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741067546586</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="March 4">
+      <option name="closed" value="true" />
+      <created>1741070116421</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1741070116422</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

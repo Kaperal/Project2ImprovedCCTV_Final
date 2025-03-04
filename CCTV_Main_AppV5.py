@@ -123,6 +123,9 @@ class CCTVApp:
         # Bring it to the front
         self.scream_label.lift()
 
+        # Auto-hide after 3 seconds
+        self.scream_label.after(3000, self.hide_scream_alert)
+
     def show_gun_alert(self):
         # If the alert label already exists, remove it before creating a new one
         if hasattr(self, "gun_label") and self.gun_label:
@@ -138,6 +141,9 @@ class CCTVApp:
         # Bring it to the front
         self.gun_label.lift()
 
+        # Auto-hide after 3 seconds
+        self.gun_label.after(3000, self.hide_scream_alert)
+
     def hide_scream_alert(self):
         if hasattr(self, "scream_label") and self.scream_label:
             self.scream_label.destroy()
@@ -149,11 +155,13 @@ class CCTVApp:
     def simulate_gun(self):
         """Simulate a gun detection."""
         self.gun_detected = True
+        self.show_gun_alert()
         print("Simulated Gun Detection: gun_detected set to True.")
 
     def simulate_scream(self):
         """Simulate a scream detection."""
         self.alert_flag = True
+        self.show_scream_alert()
         print("Simulated Scream Detection: alert_flag set to True.")
     def reset_button(self):
         """Simulate a gun detection."""
@@ -301,8 +309,6 @@ class CCTVApp:
                     self.alert_flag = True
                     self.show_scream_alert()  # Show label
                     print("Audio event detected: ", detected_event)
-
-
             except Exception as e:
                 print(f"Error in audio callback: {e}")
 
