@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="March 4">
+      <change afterPath="$PROJECT_DIR$/CCTV_Main_AppV6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CCTV_Main_AppV5.py" beforeDir="false" afterPath="$PROJECT_DIR$/CCTV_Main_AppV5.py" afterDir="false" />
     </list>
@@ -54,6 +55,7 @@
     &quot;Python.CCTV_Main_AppV3.executor&quot;: &quot;Run&quot;,
     &quot;Python.CCTV_Main_AppV4.executor&quot;: &quot;Run&quot;,
     &quot;Python.CCTV_Main_AppV5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CCTV_Main_AppV6.executor&quot;: &quot;Run&quot;,
     &quot;Python.Face_Recognition_Capture.executor&quot;: &quot;Run&quot;,
     &quot;Python.Gun_Capture.executor&quot;: &quot;Run&quot;,
     &quot;Python.audio_detect.executor&quot;: &quot;Run&quot;,
@@ -244,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741070116422</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="March 4">
+      <option name="closed" value="true" />
+      <created>1741071926568</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1741071926568</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

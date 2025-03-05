@@ -13,6 +13,8 @@ import csv
 import datetime
 import os
 
+import serial
+
 # Desired display size
 d_width = 1080
 d_height = 720
@@ -79,7 +81,7 @@ class CCTVApp:
 
         # Video display label
         self.video_label = tk.Label(root)
-        self.video_label.grid(row=3, column=0, columnspan=4, sticky='nsew')
+        self.video_label.grid(row=3, column=0, padx=(100,0) ,columnspan=4, sticky='nsew')
 
         # Closing protocol
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
@@ -93,7 +95,6 @@ class CCTVApp:
         # Add frame for simulation buttons
         self.simulation_frame = tk.Frame(root)
         self.simulation_frame.grid(row=3, column=0, padx=10, pady=10, sticky="nw")
-
         # Simulate Gun button
         self.simulate_gun_button = tk.Button(self.simulation_frame, text="Simulate Gun", command=self.simulate_gun)
         self.simulate_gun_button.pack(pady=5)
@@ -106,6 +107,9 @@ class CCTVApp:
         self.reset_button = tk.Button(self.simulation_frame, text="Reset Scream and Gun",
                                                 command=self.reset_button)
         self.reset_button.pack(pady=5)
+        self.TextingTest_button = tk.Button(self.simulation_frame, text="Test Texting",
+                                      command=self.test_button)
+        self.TextingTest_button.pack(pady=5)
 
 
     def show_scream_alert(self):
@@ -156,6 +160,7 @@ class CCTVApp:
         """Simulate a gun detection."""
         self.gun_detected = True
         self.show_gun_alert()
+        #self.serial_connection.write(b"Assault;yes;Alwin;7182378:1983920:127829/121/21")
         print("Simulated Gun Detection: gun_detected set to True.")
 
     def simulate_scream(self):
@@ -169,6 +174,10 @@ class CCTVApp:
         self.alert_flag = False
         self.hide_scream_alert()
         self.hide_gun_alert()
+
+    def test_button(self):
+        self.serial_connection.write(b"TEST; yes; TEST; 7182378:1983920:127829/121/21")
+
 
 
     def initialize_audio_model(self):
@@ -262,12 +271,18 @@ class CCTVApp:
 
     def select_port(self):
         """Connect to the selected serial port."""
-        port = self.selected_port.get()
-        try:
-            self.serial_connection = serial.Serial(port, baudrate=9600, timeout=1)
-            messagebox.showinfo("Success", f"Connected to {port}")
-        except Exception as e:
-            messagebox.showerror("Error", f"Cannot connect to {port}: {e}")
+        self.selected_port = self.port_dropdown.get()
+        if self.selected_port:
+            try:
+                self.serial_connection = serial.Serial(self.selected_port, baudrate=9600, timeout=1)
+                #self.serial_connection.flushInput()
+                self.serial_connection.open()
+
+                print(f"Selected port: {self.serial_connection.port}")
+                messagebox.showinfo("Success", f"Connected to {self.selected_port}")
+            except Exception as e:
+                print(f"Error opening serial port: {e}")
+                messagebox.showerror("Error", f"Cannot connect to {self.selected_port}: {e}")
 
     def select_microphone(self):
         """Set the selected microphone for audio detection."""
@@ -363,6 +378,10 @@ class CCTVApp:
             current_time = datetime.datetime.now().strftime("%H:%M:%S")
             current_date = datetime.datetime.now().strftime("%Y-%m-%d")
             label_face = [face['name'] for face in faces]
+
+            labels = [detection['label'] for detection in detections]
+            output = f"{', '.join(labels)}; {self.alert_flag}; {', '.join(label_face)}; {current_time} {current_date}"
+
             with open(self.csv_file_path, 'a', newline='') as csvfile:
                 csv_writer = csv.writer(csvfile)
                 if self.header == 0:
@@ -386,6 +405,8 @@ class CCTVApp:
                 self.alert_flag = False
                 self.hide_scream_alert()
                 self.hide_gun_alert()
+                self.serial_connection.write(output.encode() + b'\n')
+
                 messagebox.showwarning("It activated")
             # Resize the frame to the desired display size
             frame = cv2.resize(frame, (d_width, d_height))
