@@ -405,7 +405,10 @@ class CCTVApp:
                 self.alert_flag = False
                 self.hide_scream_alert()
                 self.hide_gun_alert()
-                self.serial_connection.write(output.encode() + b'\n')
+                try:
+                    self.serial_connection.write(output.encode() + b'\n')
+                except Exception as e:
+                    print(f"Error sending output to Arduino: {e}")
 
                 messagebox.showwarning("It activated")
             # Resize the frame to the desired display size
