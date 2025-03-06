@@ -179,7 +179,7 @@ class CCTVApp:
         try
             self.serial_connection.write(b"TEST; yes; TEST; 7182378:1983920:127829/121/21")
         except Exception as e:
-            print(f"Error sending output to Arduino: {e}")
+            print(f"Error sending output to Arduino: {e}") #edfgh
 
 
     def initialize_audio_model(self):
