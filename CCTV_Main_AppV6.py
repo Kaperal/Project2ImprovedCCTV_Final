@@ -92,24 +92,24 @@ class CCTVApp:
         self.alert_flag = False  # Shared state for detection
         self.gun_detected = False
 
-        # Add frame for simulation buttons
-        self.simulation_frame = tk.Frame(root)
-        self.simulation_frame.grid(row=3, column=0, padx=10, pady=10, sticky="nw")
-        # Simulate Gun button
-        self.simulate_gun_button = tk.Button(self.simulation_frame, text="Simulate Gun", command=self.simulate_gun)
-        self.simulate_gun_button.pack(pady=5)
-
-        # Simulate Scream button
-        self.simulate_scream_button = tk.Button(self.simulation_frame, text="Simulate Scream",
-                                                command=self.simulate_scream)
-        self.simulate_scream_button.pack(pady=5)
-        # Reset Scream and Gun
-        self.reset_button = tk.Button(self.simulation_frame, text="Reset Scream and Gun",
-                                                command=self.reset_button)
-        self.reset_button.pack(pady=5)
-        self.TextingTest_button = tk.Button(self.simulation_frame, text="Test Texting",
-                                      command=self.test_button)
-        self.TextingTest_button.pack(pady=5)
+        # # Add frame for simulation buttons
+        # self.simulation_frame = tk.Frame(root)
+        # self.simulation_frame.grid(row=3, column=0, padx=10, pady=10, sticky="nw")
+        # # Simulate Gun button
+        # self.simulate_gun_button = tk.Button(self.simulation_frame, text="Simulate Gun", command=self.simulate_gun)
+        # self.simulate_gun_button.pack(pady=5)
+        #
+        # # Simulate Scream button
+        # self.simulate_scream_button = tk.Button(self.simulation_frame, text="Simulate Scream",
+        #                                         command=self.simulate_scream)
+        # self.simulate_scream_button.pack(pady=5)
+        # # Reset Scream and Gun
+        # self.reset_button = tk.Button(self.simulation_frame, text="Reset Scream and Gun",
+        #                                         command=self.reset_button)
+        # self.reset_button.pack(pady=5)
+        # self.TextingTest_button = tk.Button(self.simulation_frame, text="Test Texting",
+        #                               command=self.test_button)
+        # self.TextingTest_button.pack(pady=5)
 
 
     def show_scream_alert(self):
@@ -176,7 +176,7 @@ class CCTVApp:
         self.hide_gun_alert()
 
     def test_button(self):
-        try
+        try:
             self.serial_connection.write(b"TEST; yes; TEST; 7182378:1983920:127829/121/21")
         except Exception as e:
             print(f"Error sending output to Arduino: {e}") #edfgh
