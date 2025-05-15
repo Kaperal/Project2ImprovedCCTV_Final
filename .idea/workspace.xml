@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="march 6">
+    <list default="true" id="511ffa11-5aa8-48d0-a121-c1fa3cf7afdf" name="Changes" comment="May 15 2025">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CCTV_Main_AppV6.py" beforeDir="false" afterPath="$PROJECT_DIR$/CCTV_Main_AppV6.py" afterDir="false" />
     </list>
@@ -285,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741246384556</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="May 15 2025">
+      <option name="closed" value="true" />
+      <created>1747280711747</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1747280711747</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -310,7 +319,8 @@
     <MESSAGE value="March 4" />
     <MESSAGE value="March 6" />
     <MESSAGE value="march 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="march 6" />
+    <MESSAGE value="May 15 2025" />
+    <option name="LAST_COMMIT_MESSAGE" value="May 15 2025" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

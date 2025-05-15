@@ -22,6 +22,8 @@ d_height = 720
 
 class CCTVApp:
     def __init__(self, root):
+        self.gun_label = None
+        self.scream_label = None
         self.root = root
         self.root.title("CCTV Surveillance System")
         self.root.state('zoomed')  # Maximize window on start
@@ -156,30 +158,30 @@ class CCTVApp:
         if hasattr(self, "gun_label") and self.gun_label:
             self.gun_label.destroy()
             self.gun_label = None
-    def simulate_gun(self):
-        """Simulate a gun detection."""
-        self.gun_detected = True
-        self.show_gun_alert()
-        #self.serial_connection.write(b"Assault;yes;Alwin;7182378:1983920:127829/121/21")
-        print("Simulated Gun Detection: gun_detected set to True.")
-
-    def simulate_scream(self):
-        """Simulate a scream detection."""
-        self.alert_flag = True
-        self.show_scream_alert()
-        print("Simulated Scream Detection: alert_flag set to True.")
-    def reset_button(self):
-        """Simulate a gun detection."""
-        self.gun_detected = False
-        self.alert_flag = False
-        self.hide_scream_alert()
-        self.hide_gun_alert()
-
-    def test_button(self):
-        try:
-            self.serial_connection.write(b"TEST; yes; TEST; 7182378:1983920:127829/121/21")
-        except Exception as e:
-            print(f"Error sending output to Arduino: {e}") #edfgh
+    # def simulate_gun(self):
+    #     """Simulate a gun detection."""
+    #     self.gun_detected = True
+    #     self.show_gun_alert()
+    #     #self.serial_connection.write(b"Assault;yes;Alwin;7182378:1983920:127829/121/21")
+    #     print("Simulated Gun Detection: gun_detected set to True.")
+    #
+    # def simulate_scream(self):
+    #     """Simulate a scream detection."""
+    #     self.alert_flag = True
+    #     self.show_scream_alert()
+    #     print("Simulated Scream Detection: alert_flag set to True.")
+    # def reset_button(self):
+    #     """Simulate a gun detection."""
+    #     self.gun_detected = False
+    #     self.alert_flag = False
+    #     self.hide_scream_alert()
+    #     self.hide_gun_alert()
+    #
+    # def test_button(self):
+    #     try:
+    #         self.serial_connection.write(b"TEST; yes; TEST; 7182378:1983920:127829/121/21")
+    #     except Exception as e:
+    #         print(f"Error sending output to Arduino: {e}") #edfgh
 
 
     def initialize_audio_model(self):
@@ -412,7 +414,7 @@ class CCTVApp:
                 except Exception as e:
                     print(f"Error sending output to Arduino: {e}")
 
-                messagebox.showwarning("It activated")
+                #messagebox.showwarning("It activated")
             # Resize the frame to the desired display size
             frame = cv2.resize(frame, (d_width, d_height))
 
